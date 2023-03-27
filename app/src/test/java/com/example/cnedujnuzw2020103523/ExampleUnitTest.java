@@ -18,6 +18,10 @@ public class ExampleUnitTest {
         for (int i = 0; i < n; i++)
             g.roll(pins);
     }
+    private void rollSpare() {
+        g.roll(5);
+        g.roll(5);
+    }
 
     @Before
     public void setUp() throws Exception {
@@ -36,14 +40,20 @@ public class ExampleUnitTest {
     }
     @Test
     public void testOneSpare() throws Exception {
-        g.roll(5);
-        g.roll(5);
+        rollSpare();
         g.roll(3);
         rollMany(17,0);
         assertEquals(16,g.score());
 
     }
-
+    @Test
+    public void testOneStrike() throws Exception {
+        g.roll(10);
+        g.roll(3);
+        g.roll(4);
+        rollMany(16, 0);
+        assertEquals(24, g.score());
+    }
 
 
 }
