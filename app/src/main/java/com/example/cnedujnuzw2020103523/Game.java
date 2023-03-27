@@ -29,7 +29,7 @@ public class Game {
         return rolls[frameIndex] + rolls[frameIndex + 1] == 10;
     }
     private boolean isStrike(int frameIndex) {
-        return rolls[frameIndex] == 10;
+        return rolls[frameIndex] == 9;
     }
     private int sumOfBallsInFrame(int frameIndex) {
         return rolls[frameIndex] + rolls[frameIndex+1];
